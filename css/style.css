@@ -1,0 +1,695 @@
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:ital@1&display=swap');
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family:Playfair;
+}
+
+/*        banner           */
+
+.banner{
+    width: 100%;
+    height: 500px;
+    animation: banner 10s infinite linear alternate;
+    background-size:cover;
+    background-position: center;
+    position:  relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+@keyframes banner{
+    0%, 20%{
+        background-image: url(/assets/banner1.jpeg);
+    }
+    25%, 45%{
+        background-image: url(/assets/banner2.jpg)
+    }
+    50%, 70%{
+        background-image: url(/assets/banner3.jpg);
+    }
+    75%, 100%{
+        background-image: url(/assets/banner3.jpg);
+    }
+}
+.capa{
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    background: rgba(0, 0, 0, 0.8);
+}
+.info{
+    z-index: 1;
+    width: 100%;
+    max-width: 550px;
+    text-align: center;
+}
+.info h1{
+    color: rgb(248, 217, 177);
+    font-size: 50px;
+    letter-spacing: 1px;
+}
+.info h3{
+    color: rgb(248, 217, 177);
+    line-height: 1.7;
+    margin-bottom: 30px;
+}
+
+/*        NAVBAR           */
+body{
+    background-color: black;
+}
+
+.barra{
+    height: 100px;
+    width: 70vh;
+    min-width: 600px;
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    margin: auto;
+}
+.link-nav{
+    position: relative;
+    text-decoration: none;
+    font-family: Playfair;
+    color: rgb(248, 217, 177);
+    font-size: 18px;
+    letter-spacing: 1px;
+    padding: 0 10px;
+}
+.link-nav:after{
+    content: "";
+    position: absolute;
+    background-color: rgb(155, 31, 31);
+    height: 3px;
+    width: 0%;
+    left: 0;
+    bottom: -10px;
+    transition: 0.3s;
+}
+.link-nav:hover{
+    color: rgb(155, 31, 31);
+}
+.link-nav:hover:after{
+    width: 100%;
+}
+
+/*        BODY CENTRAL          */
+.contenedor{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-wrap: wrap;
+    
+}
+.card{
+    position: relative;
+    width: 400px;
+    height: 450px;
+    margin: 25px 25px 60px 25px;
+    
+}
+.card .cara{
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    backface-visibility: hidden;
+    border-radius: 10px;
+    overflow: hidden;
+    transition: .5s;
+}
+.card .frontal{
+    transform: perspective(600px) rotateY(0deg);
+    box-shadow: 0 0px 10px rgb(248, 217, 177);
+}
+.card .frontal img{
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+.card .frontal h3{
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    height: 45px;
+    line-height: 45px;
+    color: antiquewhite;
+    background: rgba(0, 0, 0, 0.5);
+    text-align: center;
+}
+.card .reverso{
+    transform: perspective(600px) rotateY(180deg);
+    background: antiquewhite;
+    padding: 15px;
+    color: black;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    text-align: center;
+    
+}
+.card .reverso .link{
+    border-top: solid 1px black;
+    height: 50px;
+    line-height: 50px;
+}
+
+.card .reverso .link a{
+    color: black;
+    text-decoration: none;
+    font-size: 20px;
+}
+.card .reverso h3{
+    font-size: 25px;
+    margin-top: 10px;
+    letter-spacing: 2px;
+}
+.card .reverso p{
+    letter-spacing: 1px;
+    font-size: 20px;
+}
+.card .reverso b{
+    font-size: 25px;
+}
+.card:hover .frontal{
+    transform: perspective(600px) rotateY(180deg);
+}
+.card:hover .reverso{
+    transform: perspective(600px) rotateY(360deg);
+}
+/*        FOOTER          */
+footer{
+    position: relative;
+    bottom: 0px;
+    width: 100%;
+    background: antiquewhite;
+}
+.contenedor-footer{
+    display: flex;
+}
+.contenedor-footer .caja{
+    flex-basis: 50%;
+    padding: 10px 20px;
+}
+.caja h2{
+    font-size: 20x;
+    font-weight: 600;
+    text-transform: uppercase;
+}
+.caja .contenido{
+    margin: 20px 0 0 0 ;
+    position: relative;
+}
+.caja .contenido:before{
+    position: absolute;
+    content: '';
+    top: -10px;
+    height: 2px;
+    width: 100%;
+    background: rgb(196, 194, 194);
+    top: -10px;
+}
+.caja .contenido:before{
+    position: absolute;
+    content: '';
+    height: 2px;
+    width: 15%;
+    background: rgb(155, 31, 31);
+}
+.izq .contenido p{
+    text-align: justify;
+    font-size: 18px;
+}
+.izq .contenido .redes{
+    margin: 20px 0 0 0 ;
+}
+.izq .contenido .redes a{
+    padding: 0 2px;
+    color: black;
+}
+.izq .contenido .redes a span{
+    height: 40px;
+    width: 40px;
+    background: rgb(196, 194, 194);
+    line-height: 40px;
+    text-align: center;
+    font-size: 18px;
+    border-radius: 5px;
+    transition: 0.3s;
+}
+.izq .contenido .redes a span:hover{
+    background: rgb(155, 31, 31);
+}
+.centro .contenido .fas{
+    font-size: 18px;
+    background: rgb(196, 194, 194);
+    height: 45px;
+    width: 45px;
+    line-height: 45px;
+    text-align: center;
+    border-radius: 50%;
+    transition: 0.3s;
+    cursor: pointer;
+}
+.centro .contenido .fas:hover{
+    background: rgb(155, 31, 31);
+}
+.centro .contenido .texto{
+    font-size: 18px;
+    font-weight: 500;
+    padding-left: 10px;
+}
+.centro .contenido .telefono{
+    margin: 10px 0;
+}
+.derecha form .texto{
+    font-size: 18px;
+    margin-bottom: 2px;
+}
+.derecha form .msg{
+    margin-top: 10px;
+}
+.derecha form input, .derecha form textarea{
+    width: 100%;
+    font-size: 18px;
+    background: rgb(196, 194, 194);
+    padding-left: 10px;
+    border: 1px solid black;
+}
+.derecha form input:focus, .derecha form textarea:focus{
+    outline-color: rgb(155, 31, 31);
+}
+.derecha form input{
+    height: 35px;
+}
+.derecha form .btn{
+    margin-top: 10px;
+}
+.derecha form .btn button{
+    height: 40px;
+    width: 100%;
+    border: 1 solid black;
+    outline: none;
+    background: rgb(155, 31, 31);
+    font-size: 18px;
+    font-weight: 500;
+    transition: 0.3s; 
+}
+.derecha form .btn button:hover{
+    background: rgb(155, 31, 31);
+}
+.buttom center{
+    padding: 5px;
+    font-size: 15px;
+    background: rgb(196, 194, 194);
+}
+.buttom center a{
+    color: rgb(155, 31, 31);
+    text-decoration: none;
+}
+.buttom center a:hover{
+    text-decoration: underline;
+}
+
+/*       paginas        */
+
+.sectionpagina{
+    display: flex;
+    justify-content: left;
+    align-items: center;
+    background: black;
+    margin-bottom: 50px;
+    margin-left: 22%;
+}
+.cardpagina{
+    position: relative;
+    width: 500px;
+    height: 600px;
+}
+/*------------------tarjeta 1-------------------*/
+.cardpagina .cardpagina1{
+    position: relative;
+    width: 100%;
+    height: 100%;
+    box-shadow: 0 5px 10px black;
+    background: linear-gradient(transparent 50%, black),url(/assets/card-vocacional-concepcion.jpg);
+    background-position: center;
+    background-size: cover;
+    z-index: 100;
+}
+.cardpagina .cardpagina1 h6{
+    position: absolute;
+    bottom: 20px;
+    left: 10px;
+    font-size: 45px;
+    color: antiquewhite;
+}
+/*-------------------tarjeta 2-------------------*/
+.cardpagina .cardpagina2{
+    position: relative;
+    width: 100%;
+    height: 100%;
+    box-shadow: 0 5px 10px black;
+    background: linear-gradient(transparent 50%, black),url(/assets/card-santa\ barbara-concepcion.jpeg);
+    background-position: center;
+    background-size: cover;
+    z-index: 100;
+}
+.cardpagina .cardpagina2 h6{
+    position: absolute;
+    bottom: 20px;
+    left: 10px;
+    font-size: 45px;
+    color: antiquewhite;
+}
+/*-------------------tarjeta 3-------------------*/
+.cardpagina .cardpagina3{
+    position: relative;
+    width: 100%;
+    height: 100%;
+    box-shadow: 0 5px 10px black;
+    background: linear-gradient(transparent 50%, black),url(/assets/card-gonzaga-concepcion.JPG);
+    background-position: center;
+    background-size: cover;
+    z-index: 100;
+}
+.cardpagina .cardpagina3 h6{
+    position: absolute;
+    bottom: 20px;
+    left: 10px;
+    font-size: 45px;
+    color: antiquewhite;
+}
+/*-------------------tarjeta 4-------------------*/
+.cardpagina .cardpagina4{
+    position: relative;
+    width: 100%;
+    height: 100%;
+    box-shadow: 0 5px 10px black;
+    background: linear-gradient(transparent 50%, black),url(/assets/card-concolacion-concepcion.jpg);
+    background-position: center;
+    background-size: cover;
+    z-index: 100;
+    
+}
+.cardpagina .cardpagina4 h6{
+    position: absolute;
+    bottom: 20px;
+    left: 10px;
+    font-size: 45px;
+    color: antiquewhite;
+    text-align: center;
+}
+/*-------------------tarjeta 5-------------------*/
+.cardpagina .cardpagina5{
+    position: relative;
+    width: 100%;
+    height: 100%;
+    box-shadow: 0 5px 10px black;
+    background: linear-gradient(transparent 50%, black),url(/assets/card-cristorey-aguilares.jpg);
+    background-position: center;
+    background-size: cover;
+    z-index: 100;
+}
+.cardpagina .cardpagina5 h6{
+    position: absolute;
+    bottom: 20px;
+    left: 10px;
+    font-size: 45px;
+    color: antiquewhite;
+}
+/*-------------------tarjeta 6-------------------*/
+.cardpagina .cardpagina6{
+    position: relative;
+    width: 100%;
+    height: 100%;
+    box-shadow: 0 5px 10px black;
+    background: linear-gradient(transparent 50%, black),url(/assets/card-sangabriel-aguilares.jpg);
+    background-position: center;
+    background-size: cover;
+    z-index: 100;
+}
+.cardpagina .cardpagina6 h6{
+    position: absolute;
+    bottom: 20px;
+    left: 10px;
+    font-size: 45px;
+    color: antiquewhite;
+}
+/*-------------------tarjeta 7-------------------*/
+.cardpagina .cardpagina7{
+    position: relative;
+    width: 100%;
+    height: 100%;
+    box-shadow: 0 5px 10px black;
+    background: linear-gradient(transparent 50%, black),url(/assets/card-san\ jose-aguilares.jpg);
+    background-position: center;
+    background-size: cover;
+    z-index: 100;
+}
+.cardpagina .cardpagina7 h6{
+    position: absolute;
+    bottom: 20px;
+    left: 10px;
+    font-size: 45px;
+    color: antiquewhite;
+}
+/*-------------------tarjeta 8-------------------*/
+.cardpagina .cardpagina8{
+    position: relative;
+    width: 100%;
+    height: 100%;
+    box-shadow: 0 5px 10px black;
+    background: linear-gradient(transparent 50%, black),url(/assets/card-jovenarg-alberdi.jpg);
+    background-position: center;
+    background-size: cover;
+    z-index: 100;
+}
+.cardpagina .cardpagina8 h6{
+    position: absolute;
+    bottom: 20px;
+    left: 10px;
+    font-size: 45px;
+    color: antiquewhite;
+}
+/*-------------------tarjeta 9-------------------*/
+.cardpagina .cardpagina9{
+    position: relative;
+    width: 100%;
+    height: 100%;
+    box-shadow: 0 5px 10px black;
+    background: linear-gradient(transparent 80%, black),url(/assets/card-santisimorosario-monteros2.jpeg);
+    background-position: center;
+    background-size: cover;
+    z-index: 100;
+}
+.cardpagina .cardpagina9 h6{
+    position: absolute;
+    bottom: 20px;
+    left: 10px;
+    font-size: 45px;
+    color: antiquewhite;
+}
+/*-------------------tarjeta 10-------------------*/
+.cardpagina .cardpagina10{
+    position: relative;
+    width: 100%;
+    height: 100%;
+    box-shadow: 0 5px 10px black;
+    background: linear-gradient(transparent 50%, black),url(/assets/card-consolaciontafi-tafi\ viejo.jpg);
+    background-position: center;
+    background-size: cover;
+    z-index: 100;
+}
+.cardpagina .cardpagina10 h6{
+    position: absolute;
+    bottom: 20px;
+    left: 10px;
+    font-size: 45px;
+    color: antiquewhite;
+}
+/*-------------------tarjeta 11-------------------*/
+.cardpagina .cardpagina11{
+    position: relative;
+    width: 100%;
+    height: 100%;
+    box-shadow: 0 5px 10px black;
+    background: linear-gradient(transparent 80%, black),url(/assets/card-juanpabloii-sanmiguel.JPG);
+    background-position: center;
+    background-size: cover;
+    z-index: 100;
+}
+.cardpagina .cardpagina11 h6{
+    position: absolute;
+    bottom: 20px;
+    left: 10px;
+    font-size: 45px;
+    color: antiquewhite;
+}
+/*-------------------tarjeta 12-------------------*/
+.cardpagina .cardpagina12{
+    position: relative;
+    width: 100%;
+    height: 100%;
+    box-shadow: 0 5px 10px black;
+    background: linear-gradient(transparent 80%, black),url(/assets/card-carlospelegrini-sanmiguel.jpeg);
+    background-position: center;
+    background-size: cover;
+    z-index: 100;
+}
+.cardpagina .cardpagina12 h6{
+    position: absolute;
+    bottom: 20px;
+    left: 10px;
+    font-size: 45px;
+    color: antiquewhite;
+}
+/*-------------------tarjeta 13-------------------*/
+.cardpagina .cardpagina13{
+    position: relative;
+    width: 100%;
+    height: 100%;
+    box-shadow: 0 5px 10px black;
+    background: linear-gradient(transparent 80%, black),url(/assets/card-clgiontraseñoradelvalle-sanmiguel.jpg);
+    background-position: center;
+    background-size: cover;
+    z-index: 100;
+}
+.cardpagina .cardpagina13 h6{
+    position: absolute;
+    bottom: 20px;
+    left: 10px;
+    font-size: 45px;
+    color: antiquewhite;
+}
+/*-------------------tarjeta 14-------------------*/
+.cardpagina .cardpagina14{
+    position: relative;
+    width: 100%;
+    height: 100%;
+    box-shadow: 0 5px 10px black;
+    background: linear-gradient(transparent 80%, black),url(/assets/card-mariadelrosario-sanmiguel.jpg);
+    background-position: center;
+    background-size: cover;
+    z-index: 100;
+}
+.cardpagina .cardpagina14 h6{
+    position: absolute;
+    bottom: 20px;
+    left: 10px;
+    font-size: 45px;
+    color: antiquewhite;
+}
+/*-------------------tarjeta 15-------------------*/
+.cardpagina .cardpagina15{
+    position: relative;
+    width: 100%;
+    height: 100%;
+    box-shadow: 0 5px 10px black;
+    background: linear-gradient(transparent 80%, black),url(/assets/card-trinidad-sanmiguel.webp);
+    background-position: center;
+    background-size: cover;
+    z-index: 100;
+}
+.cardpagina .cardpagina15 h6{
+    position: absolute;
+    bottom: 20px;
+    left: 10px;
+    font-size: 45px;
+    color: antiquewhite;
+}
+.cardpagina .card_info{
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    left: 0;
+    bottom: 0;
+    right: 0;
+    top: 0;
+    margin: auto;
+    padding: 15px;
+    background: antiquewhite;
+    z-index: 90;
+    box-shadow: 0 5px 10px black;
+    transition: .5s;
+}
+.cardpagina:hover .card_info{
+    left: 100%;
+}
+.card_info .headpagina{
+    padding: 5px 0;
+    border-bottom: solid 1px rgb(155, 31, 31);
+}
+.card_info .headpagina .titulopagina{
+    font-size: 40px;
+    font-weight: 700;
+    color: rgb(155, 31, 31);
+    text-align: center;
+}
+.card_info .headpagina .descripcionpagina .itempagina{
+    display: flex;
+    gap: 15px;
+    justify-content: center;
+    font-size: 25px;
+}
+.card_info .content{
+    margin-top: 10px;
+    font-size: 20px;
+}
+.content .titulopagina{
+    text-align: center;
+    text-decoration: underline;
+    font-size: 25px;
+
+}
+.card_info .content .listapagina{
+    padding: 10px 10px;
+    list-style: none;
+    text-align: center;
+}
+.card_info .content .listapagina li{
+    padding: 10px;
+    
+}
+.card_info .content .listapagina li img{
+    width: 100px;
+    height: 100px;
+}
+.card_info .accion .btnpagina{
+    padding: 10px;
+    color: antiquewhite;
+    width: 100%;
+    text-decoration: none;
+    text-align: center;
+    font-size: 30px;
+    background: rgb(155, 31, 31);
+    display: block;
+    margin-top: 15px;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
